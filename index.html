@@ -213,9 +213,9 @@
       <h2 class="text-3xl font-bold">Request a Free Quote</h2>
       <p class="mt-2 text-white/80">Tell us a bit about your property and we’ll reply with pricing and availability.</p>
       <form name="quote" methods="POST" data-netlify="true" class="mt-8 grid md:grid-cols-2 gap-4">
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Full name" required/>
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Phone" required/>
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" placeholder="Email" required/>
+        <input name="name" class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Full name" required/>
+        <input name="phone-number" class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Phone" required/>
+        <input name="email" class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" placeholder="Email" required/>
         <div class="md:col-span-2">
     <p class="text-sm text-slate-300 mb-2">Preferred contact method:</p>
     <div class="flex items-center gap-6 text-sm text-slate-200">
@@ -233,7 +233,7 @@
       </label>
     </div>
   </div>
-        <textarea class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" rows="4" placeholder="Tell us what you need (ex. in/out windows, screens, solar panels)" required></textarea>
+        <textarea name="details" class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" rows="4" placeholder="Tell us what you need (ex. in/out windows, screens, solar panels)" required></textarea>
         <div class="md:col-span-2 flex flex-wrap gap-3">
           <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold shadow hover:bg-sky-700">Send Request</button>
 
