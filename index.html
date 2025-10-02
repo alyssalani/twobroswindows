@@ -119,30 +119,53 @@
       </div>
       <a href="#quote" class="hidden md:inline-flex items-center rounded-xl border border-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-50">Claim Free Quote</a>
     </div>
-    <div class="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+    <div class="mt-8 flex space-x-4 overflow-x-auto pb-4">
+  <figure onclick="openLightbox(this)" class="cursor-pointer flex-shrink-0 w-64 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
     <img class="object-cover h-48 w-full" src="assets/before-after-lantern.webp" alt="Outdoor lantern glass—before vs after clean" />
     <figcaption class="px-4 py-3 text-sm text-slate-600">Light fixture glass — before vs after</figcaption>
   </figure>
 
-  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+  <figure onclick="openLightbox(this)" class="cursor-pointer flex-shrink-0 w-64 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
     <img class="object-cover h-48 w-full" src="assets/before-after-window.webp" alt="Residential window before/after reflection" />
     <figcaption class="px-4 py-3 text-sm text-slate-600">Exterior window — before vs after</figcaption>
   </figure>
 
-  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+  <figure onclick="openLightbox(this)" class="cursor-pointer flex-shrink-0 w-64 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
     <img class="object-cover h-48 w-full" src="assets/skylight.webp" alt="Skylight panel with hard water spots removed" />
     <figcaption class="px-4 py-3 text-sm text-slate-600">Skylight panel — hard water spots removed</figcaption>
   </figure>
 
-  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
+  <figure onclick="openLightbox(this)" class="cursor-pointer flex-shrink-0 w-64 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm">
     <img class="object-cover h-48 w-full" src="assets/cabin.jpg" alt="High interior windows on ladder—log cabin" />
     <figcaption class="px-4 py-3 text-sm text-slate-600">High interior cabin windows — before vs after</figcaption>
   </figure>
 </div>
 
   </section>
+  <!-- Lightbox -->
+<div id="lightbox"
+  class="fixed inset-0 hidden bg-black/80 items-center justify-center z-50 p-4">
+  <span onclick="closeLightbox()" class="absolute top-5 right-8 text-white text-3xl cursor-pointer">&times;</span>
+  <div class="text-center">
+    <img id="lightbox-img" src="" class="max-h-[80vh] max-w-full rounded-lg shadow-lg mx-auto" />
+    <p id="lightbox-caption" class="mt-4 text-white text-sm"></p>
+  </div>
+</div>
 
+<script>
+  function openLightbox(fig) {
+    const img = fig.querySelector("img");
+    const caption = fig.querySelector("figcaption");
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox-caption").innerText = caption ? caption.innerText : "";
+    document.getElementById("lightbox").classList.remove("hidden");
+    document.getElementById("lightbox").classList.add("flex");
+  }
+  function closeLightbox() {
+    document.getElementById("lightbox").classList.add("hidden");
+    document.getElementById("lightbox").classList.remove("flex");
+  }
+</script>
   <!-- Process -->
   <section id="process" class="bg-slate-50 py-16">
     <div class="max-w-6xl mx-auto px-4">
