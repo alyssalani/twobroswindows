@@ -213,13 +213,29 @@
       <h2 class="text-3xl font-bold">Request a Free Quote</h2>
       <p class="mt-2 text-white/80">Tell us a bit about your property and we’ll reply with pricing and availability.</p>
       <form class="mt-8 grid md:grid-cols-2 gap-4">
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Full name"/>
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Phone"/>
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" placeholder="Email"/>
-        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" placeholder="Service address"/>
-        <textarea class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" rows="4" placeholder="Tell us what you need (ex. in/out windows, screens, solar panels)"></textarea>
+        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Full name" required/>
+        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3" placeholder="Phone" required/>
+        <input class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" placeholder="Email" required/>
+        <div class="md:col-span-2">
+    <p class="text-sm text-slate-300 mb-2">Preferred contact method:</p>
+    <div class="flex items-center gap-6 text-sm text-slate-200">
+      <label class="flex items-center gap-2">
+        <input type="radio" name="contact-method" value="Call" required />
+        Call
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="contact-method" value="Text" />
+        Text
+      </label>
+      <label class="flex items-center gap-2">
+        <input type="radio" name="contact-method" value="Email" />
+        Email
+      </label>
+    </div>
+  </div>
+        <textarea class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 md:col-span-2" rows="4" placeholder="Tell us what you need (ex. in/out windows, screens, solar panels)" required></textarea>
         <div class="md:col-span-2 flex flex-wrap gap-3">
-          <button type="button" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold shadow hover:bg-sky-700">Send Request</button>
+          <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-sky-600 px-5 py-3 text-sm font-semibold shadow hover:bg-sky-700">Send Request</button>
 
           <a href="https://calendly.com/your-link/windows" class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold hover:bg-slate-50">Book Online</a>
         </div>
@@ -241,13 +257,7 @@
     <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
       <div class="font-semibold">Do I need to be home?</div>
       <p class="mt-2 text-sm text-slate-600">
-        Nope. We can text you updates and photos. We just need access to the yard and a working exterior spigot for pure-water work.
-      </p>
-    </div>
-    <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
-      <div class="font-semibold">What if it rains?</div>
-      <p class="mt-2 text-sm text-slate-600">
-        We include a rain guarantee—if rain affects the work within 14 days, we’ll touch up the affected panes.
+        Nope. We can text you updates and photos. We just need access to the yard and a working exterior spigot.
       </p>
     </div>
     <div class="rounded-2xl border border-slate-200 p-6 bg-white shadow-sm">
